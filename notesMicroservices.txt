@@ -1,0 +1,18 @@
+HATEOAS(Hypermedia the engine of application state) : 
+format json permet de standariser format des donnees et de les echanges 
+define a standard json format for data and exchane it between applications  
+
+-> actuator : permet de rafraichir a chot l'app(cnfig de l'app,charge de la memoire....)
+
+orchestration micro-services
+-> creation service de config [centraliser la config de chaque micro-service]
+-> cretion service d'enregistrement[enregistrer localisation de chaque micro-s(nom,adresse,port)]{comme Eureka developpe par netflix}
+-> service proxy(comme zuul par ex) [joue le role d'un brocker pour une communication synchrone,permet l'equilibrage de charge , si il y a une monte en charge
+                 ce service va repatir les requetes vers differentes instances,il verifie temps de reponse si il detecte des lenteurs il envoie
+                 message a l'architecture cloud dont il y a un outil pour faire l'orchestration des service{kubernates par ex}] qui va demarer d'autres instances
+
+proxy ZUUL -> se base sur des input et output bloquantes
+spring cloud gateway-> proxy meme que ZUUL mais en se basant sur un modele non bloquant, il utilise Spring webflux qui demarre sous le serveur :NETY et pas TOMCAT
+scalabilite verticale=>ajouter capacite de stockage, capacite memoire
+
+scalabilite horizontale=> demarer de nouvelles machines(nouvelles instances)
